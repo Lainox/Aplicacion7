@@ -16,6 +16,9 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="?view=index">Home <span class="sr-only">(current)</span></a></li>
         
+         <?php if(isset($_SESSION['user']) AND $_SESSION['admin']==1)
+              {
+?>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Usuarios <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -28,7 +31,11 @@
             
           </ul>
         </li>
+        <?php
+               }
+             ?>
       </ul>
+
       
       <ul class="nav navbar-nav navbar-right">
         <?php if(isset($_SESSION['user']))

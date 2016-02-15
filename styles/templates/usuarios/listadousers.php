@@ -39,8 +39,12 @@
 	<table class="table" id="table_id">
   	<thead>
     <tr>
+        
     	<th>Nombre </th>
     	<th>Usuario</th>
+       
+     
+
     </tr>
     
     </thead>
@@ -50,23 +54,36 @@
             <?php 
             $db = new Conexion();
             $sql = $db->query("SELECT * from users");
+            
             while($x = $db->recorrer($sql))
             { 
                 $datos[] = array(
 
                     'user' => $x['user'],
                     'nombre' => $x['nombre']
+                    
 
                     ); 
-            }; ?>
+            };
 
+          
+
+            ?>
+            
+           
             <?php foreach($datos as $dato){ ?>
     		<td><?php echo $dato['nombre']; ?></td>
-            <td><?php echo '<a href="?view=perfil">'.$dato['user'].'</a>'; ?></td>
+            <td><?php echo $dato['user']; ?></td>
+            
+           
+           
+          
     	</tr>
-        <?php } ?>
+        <?php } 
+   
+        ?>  
 
-       </tbody>
+    </tbody>
     </table>
 
 </div>

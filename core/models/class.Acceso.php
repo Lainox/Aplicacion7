@@ -28,6 +28,7 @@ class Acceso
 			 		
 			 		$_SESSION['pass'] = $datos['pass'];
 			 	    $_SESSION['fecha'] = $datos['fecha'];
+			 	    $_SESSION['admin'] = $datos['admin'];
 			 		if($_POST['session'] == true)
 			 		{
 			 			ini_set('session.cookie_lifetime', time() + (60*24));
